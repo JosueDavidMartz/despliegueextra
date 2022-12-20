@@ -15,8 +15,8 @@ public class App
     public static void main( String[] args )
     {
         //aquí va el cors??
-       // port(getHerokuAssignedPort());
-        port(80);
+        port(getHerokuAssignedPort());
+       // port(80);
         // Aqui va el CORS
         options("/*", (request, response) -> {
             String accessControlRequestHeaders = request.headers("Access-Control-Request-Headers");
@@ -61,12 +61,12 @@ public class App
         
     
     }
-    /*static int getHerokuAssignedPort() {
+    static int getHerokuAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
         if (processBuilder.environment().get("PORT") != null) {
             return Integer.parseInt(processBuilder.environment().get("PORT"));
         }
         return 4567; // return default port if heroku-port isn't set (i.e. on localhost)
     }
-    */
+    
 }

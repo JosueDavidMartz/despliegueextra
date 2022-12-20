@@ -67,7 +67,7 @@ public class DAO {
 
         conn = c.getConnection();
         try {
-            String sql = "INSERT INTO gatitos (nombre) values (?)";
+            String sql = "INSERT INTO gato (nombre) values (?)";
             stm = (PreparedStatement) conn.prepareStatement(sql);
             stm.setString(1, u.getNombre());
          
